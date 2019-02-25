@@ -1,31 +1,33 @@
 clear
+
 cd bancos/logs
 nocuenta=`cat cuentas.txt`
 cd ../cuentas
-touch $nocuenta.txt
-echo $nocuenta
 
+echo "Sistema de registro al sisitema"
 
-echo "Bienvenido, Porfavor ingrese su nombre:"
-
+echo "Por favor ingrese su nombre:"
 read nombre
-echo "$nombre" >> $nocuenta.txt
+touch $nombre.txt
+echo "$nombre" >> $nombre.txt
 
-echo "ingrese su contraseña:"
+echo "Ingrese su contraseña:"
 read pass
-echo "$pass" >>$nocuenta.txt
+echo "$pass" >> $nombre.txt
 
-echo "eliga su tipo de cuenta:"
+echo "Eliga su tipo de cuenta:"
 echo "0- corriente"
 echo "1- ahorros"
-read opcion
-echo "$opcion" >> $nocuenta.txt
-echo "activo" >> $nocuenta.txt
-echo "$nocuenta"
-nocuenta=$(($nocuenta+1))
-echo "$nocuenta"
-cd ../logs
-sed '!d' cuentas.txt > cuentas.txt
-echo "$nocuenta" >> cuentas.txt
+read tipo
+echo "$tipo" >> $nombre.txt
 
-#echo"cuentas creadas: $nocuenta"
+echo "$nocuenta" >> $nombre.txt
+
+echo "0" >> $nombre.txt
+
+echo "activo" >> $nombre.txt
+
+nocuenta=$(($nocuenta+1))
+cd ../logs
+echo "$nocuenta" > cuentas.txt
+cd ../..
