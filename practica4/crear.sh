@@ -1,15 +1,26 @@
 
 clear
+cd bancos/cuentas
+touch $nocuenta.txt
+
 
 echo "Bienvenido, Porfavor ingrese su nombre:"
+
 read nombre
+echo "$nombre" >> $nocuenta.txt
+
 echo "ingrese su contraseña:"
-read contrasena
+read pass
+echo "$pass" >>$nocuenta.txt
+
 echo "eliga su tipo de cuenta:"
 echo "0- corriente"
 echo "1- ahorros"
 read opcion
-
-let "nocuenta=nocuenta+1"
+echo "$opcion" >> $nocuenta.txt
 
 echo "cuentas creadas: $nocuenta"
+
+export nocuenta
+
+

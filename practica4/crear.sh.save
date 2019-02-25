@@ -1,0 +1,19 @@
+
+clear
+
+let "nocuenta=nocuenta+1"
+cd bancos/cuentas
+touch "$nocuenta".txt
+echo "Bienvenido, Porfavor ingrese su nombre:"
+echo
+echo "ingrese su contraseña:"
+read contrasena
+echo "eliga su tipo de cuenta:"
+echo "0- corriente"
+echo "1- ahorros"
+read opcion
+
+let "nocuenta=nocuenta+1"
+
+echo "cuentas creadas: $nocuenta"
+
