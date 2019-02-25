@@ -1,6 +1,8 @@
 
 clear
-cd bancos/cuentas
+cd bancos/logs
+nocuenta=`head -n 1 cuentas.txt`
+cd ../cuentas
 touch $nocuenta.txt
 
 
