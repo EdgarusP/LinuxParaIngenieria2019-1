@@ -4,23 +4,26 @@ cd bancos/logs
 nocuenta=`cat cuentas.txt`
 cd ../cuentas
 
-echo "Sistema de registro al sisitema"
-
-echo "Por favor ingrese su nombre:"
+echo "-- R E G I S T R O --"
+echo "---------------------"
+echo "Ingrese su nombre:"
 read nombre
 touch $nombre.txt
 echo "$nombre" >> $nombre.txt
-
+export nombre
 echo "Ingrese su contraseña:"
-read pass
-echo "$pass" >> $nombre.txt
+read psw
+export psw
+echo "$psw" >> $nombre.txt
 
 echo "Eliga su tipo de cuenta:"
 echo "0- corriente"
 echo "1- ahorros"
 read tipo
 echo "$tipo" >> $nombre.txt
-
+echo "Saldo Inicial:"
+read saldo
+echo "$saldo" >> $nombre.txt
 echo "$nocuenta" >> $nombre.txt
 
 echo "0" >> $nombre.txt
@@ -31,3 +34,6 @@ nocuenta=$(($nocuenta+1))
 cd ../logs
 echo "$nocuenta" > cuentas.txt
 cd ../..
+echo "¡Usuario creado con éxito!"
+sleep 2
+sh main.sh
