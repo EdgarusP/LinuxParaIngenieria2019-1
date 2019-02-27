@@ -7,23 +7,25 @@ read usuario
 echo "Ingrese su contraseña"
 read pass
 echo "Verificando..."
-sleep 2
+sleep 1
 if  [ -d bancos/ ]; then
 	cd bancos/cuentas
 	if [ -f $usuario.txt ]; then
-		if [ "$pass" = "$psw" ]; then
-			clear
+		psw=`sed -n '2,2 p' $usuario.txt`
+		if [ $pass = $psw ]; then
 			echo "Ingresando..."
-			sleep 2
-			cd ..
-			cd ..
+			sleep 1
+			cd ../..
+			export usuario
 			sh menu.sh
+		else
+			echo "Constraseña incorrecta"
+			sleep 2
+			cd ../..
 		fi
 	else
-		echo "¡Debes crear tu usuario primero para ingresar!"
-		sleep 3
-		cd ..
-		cd ..
-		sh crear.sh
+		echo "Usuario inexistente"
+		sleep 2
+		cd ../..
 	fi
 fi

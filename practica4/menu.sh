@@ -1,6 +1,5 @@
 clear
-
-echo "BIENVENIDO $nombre"
+echo "BIENVENIDO $usuario"
 echo "------------------"
 echo "Elija un servicio:"
 echo "1- Hacer un retiro"
@@ -11,7 +10,7 @@ echo "5- Cambiar clave"
 echo "6- Eliminar cuenta"
 echo "------------------"
 read opcion
-
+export usuario
 case $opcion in
 1) sh retirar.sh;; 
 2) sh consignar.sh;;

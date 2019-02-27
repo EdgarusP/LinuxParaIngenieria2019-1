@@ -13,7 +13,6 @@ echo "$nombre" >> $nombre.txt
 export nombre
 echo "Ingrese su contraseña:"
 read psw
-export psw
 echo "$psw" >> $nombre.txt
 
 echo "Eliga su tipo de cuenta:"
@@ -21,9 +20,7 @@ echo "0- corriente"
 echo "1- ahorros"
 read tipo
 echo "$tipo" >> $nombre.txt
-echo "Saldo Inicial:"
-read saldo
-echo "$saldo" >> $nombre.txt
+
 echo "$nocuenta" >> $nombre.txt
 
 echo "0" >> $nombre.txt
@@ -35,5 +32,4 @@ cd ../logs
 echo "$nocuenta" > cuentas.txt
 cd ../..
 echo "¡Usuario creado con éxito!"
-sleep 2
-sh main.sh
+sleep 1

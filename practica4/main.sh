@@ -8,7 +8,7 @@ else
 	cd bancos/
 	mkdir logs/ cuentas/
 	cd logs
-	touch cuentas.txt historial.txt
+	touch cuentas.txt historial.txt superior.txt
 	echo "1" >> cuentas.txt
 	cd ../../
 fi
@@ -26,3 +26,4 @@ case $opcion in
 3) sh recuperar.sh;;
 *) echo "opcion no valida";;
 esac
+clear
