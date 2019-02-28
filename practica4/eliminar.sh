@@ -1,5 +1,5 @@
 clear
-echo "Desactivar------------------------------------------------"
+echo "-- D E S A C T I V A R --"
 echo "ingrese su nombre de usuario: "
 read user
 

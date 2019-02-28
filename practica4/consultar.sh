@@ -7,4 +7,4 @@ echo "-- C O N S U L T A --"
 echo "---------------------"
 echo "Saldo Disponible: $saldo"
 cd ../..
-sleep 4
+sleep 2

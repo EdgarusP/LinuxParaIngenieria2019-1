@@ -17,12 +17,10 @@ echo "$cuenta" >> $usuario.txt
 echo "$saldo" >> $usuario.txt
 echo "activo" >> $usuario.txt
 
-cd ..
-cd logs/
+cd ../logs/
 echo "El usuario $usuario ha consignado $monto" >> historial.txt
 
 if [ "$monto" -ge 1000000 ]; then
-	echo "hola"
 	echo "El usuario $usuario ha consignado $monto" >> superior.txt
 	sleep 1
 fi

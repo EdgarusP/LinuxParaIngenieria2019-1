@@ -13,11 +13,18 @@ if  [ -d bancos/ ]; then
 	if [ -f $usuario.txt ]; then
 		psw=`sed -n '2,2 p' $usuario.txt`
 		if [ $pass = $psw ]; then
-			echo "Ingresando..."
-			sleep 1
-			cd ../..
-			export usuario
-			sh menu.sh
+			estado=`sed -n '6,6 p' $usuario.txt`
+			if [ $estado  = "activo" ]; then
+				echo "Ingresando..."
+				sleep 1
+				cd ../..
+				export usuario
+				sh menu.sh
+			else
+				echo "Tu cuenta se encuentra desactivada."
+				sleep 2
+				cd .../..
+			fi
 		else
 			echo "Constraseña incorrecta"
 			sleep 2
