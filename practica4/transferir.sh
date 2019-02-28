@@ -7,7 +7,7 @@ read cash
 echo "Nombre usuario destino"
 read cuenta
 
-if[ -f $cuenta.txt ]; then
+if [ -f $cuenta.txt ]; then
 	saldoRemit=`sed -n '5 p' $usuario.txt`
 	saldoDest=`sed -n '5 p' $cuenta.txt`
 	if [ "$saldo" -ge "$cash" ]; then
