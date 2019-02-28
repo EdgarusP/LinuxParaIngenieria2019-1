@@ -16,7 +16,8 @@ echo "$tipo" >> $usuario.txt
 echo "$cuenta" >> $usuario.txt
 echo "$saldo" >> $usuario.txt
 echo "activo" >> $usuario.txt
-
+echo "Consignación realizada con éxito."
+sleep 3
 cd ../logs/
 echo "El usuario $usuario ha consignado $monto" >> historial.txt
 
