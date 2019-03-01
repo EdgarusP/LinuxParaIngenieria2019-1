@@ -4,11 +4,11 @@ echo "Cuanto dinero quiere ingresar:"
 read monto
 cd bancos/cuentas/
 
-pass=`sed -n '2,2 p' $usuario.txt`
-tipo=`sed -n '3,3 p' $usuario.txt`
-cuenta=`sed -n '4,4 p' $usuario.txt`
-saldo=`sed -n '5,5 p' $usuario.txt`
-saldo=$(($saldo+$monto))
+pass=`sed -n '2 p' $usuario.txt`
+tipo=`sed -n '3 p' $usuario.txt`
+cuenta=`sed -n '4 p' $usuario.txt`
+saldo=`sed -n '5 p' $usuario.txt`
+let saldo=$saldo+$monto
 
 echo "$usuario" > $usuario.txt
 echo "$pass" >> $usuario.txt
@@ -23,7 +23,6 @@ echo "El usuario $usuario ha consignado $monto" >> historial.txt
 
 if [ "$monto" -ge 1000000 ]; then
 	echo "El usuario $usuario ha consignado $monto" >> superior.txt
-	sleep 1
 fi
 
 cd ../..
